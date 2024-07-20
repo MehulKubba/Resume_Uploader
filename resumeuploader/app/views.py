@@ -13,9 +13,8 @@ class HomeView(View):
         form = ResumeForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            # Redirect to avoid form resubmission on refresh
-            return redirect('home')  # Assuming 'home' is the name of the URL pattern for HomeView
-        # If form is not valid, render the same template with the form
+           
+            return redirect('home')  
         return render(request, 'app/home.html', {'form': form})
 
 class CandidateView(View):
